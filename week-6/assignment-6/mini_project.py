@@ -16,8 +16,8 @@ def find_max(numbers):
 def search(numbers, target):
     for i in range(len(numbers)):
         if numbers[i] == target:
-            return print(i)
-    return print("-1")
+            return i
+    return -1
 def bubble_sort(numbers):
     numbers = numbers.copy()
     swapped = True
@@ -47,7 +47,9 @@ def main():
         elif num == 2:
             find_max(data)
         elif num == 3:
-            search(data, int(input("Enter a number:")))
+            result = search(data, int(input("Enter a number:")))
+            if result == -1: print("Not found")
+            else: print (f"Found at index {result}")
         elif num == 4:
             bubble_sort(data)
         elif num == 5:
