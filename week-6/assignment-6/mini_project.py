@@ -6,13 +6,13 @@ def find_min(numbers):
                     min = num
                 elif min > num:
                     min = num
-    return print(f"The minimum is {min}")
+    return min
 def find_max(numbers):
     max = 0
     for num in numbers:
         if num > max:
             max = num
-    return print(f"The maximum is {max}")
+    return max
 def search(numbers, target):
     for i in range(len(numbers)):
         if numbers[i] == target:
@@ -27,7 +27,7 @@ def bubble_sort(numbers):
             if numbers[i] > numbers[i + 1]:
                 numbers[i], numbers[i + 1] = numbers[i + 1], numbers[i]
                 swapped = True
-    return print(numbers)
+    return numbers
 def show_menu():
     menu = input("""
         ===== Number Cruncher =====
@@ -43,15 +43,18 @@ def main():
     while True:
         num = int(show_menu())
         if num == 1:
-            find_min(data)
+            min = find_min(data)
+            print(f"The minimum is {min}")
         elif num == 2:
-            find_max(data)
+            max = find_max(data)
+            print(f"The maximum is {max}")
         elif num == 3:
             result = search(data, int(input("Enter a number:")))
             if result == -1: print("Not found")
             else: print (f"Found at index {result}")
         elif num == 4:
-            bubble_sort(data)
+            bubble = bubble_sort(data)
+            print(bubble)
         elif num == 5:
             break
         else:
