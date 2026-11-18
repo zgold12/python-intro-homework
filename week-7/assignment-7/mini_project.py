@@ -12,7 +12,7 @@ if os.path.exists("week-7/data/expenses.csv"):
         food_items = [item for item in records if item["category"] == "Food"]
         total_value = sum(item["amount"] for item in food_items)
     with open("week-7/assignment-7/food_report.txt", "w") as file:
-        file.write(f"\nFood Expense Report — generated {now.strftime("%B %d, %Y")}")
+        file.write(f"Food Expense Report — generated {now.strftime("%B %d, %Y")}")
         for row in food_items:
            file.write(f"\n{row["date"]}: ${row["amount"]}")
         file.write(f"\nTotal: ${total_value:.2f}")
